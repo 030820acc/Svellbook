@@ -1,0 +1,25 @@
+<script>
+
+</script>
+
+<div>
+    <p>thing</p>
+    <p>thing</p>
+    <p>thing</p>
+    <p>thing</p>
+    <p>thing</p>
+</div>
+
+<style>
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 15%;
+        height: 100%;
+        background-color: darkolivegreen;
+    }
+    p {
+        color: aliceblue;
+    }
+</style>
