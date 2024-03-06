@@ -1,14 +1,12 @@
 <script>
     import { spells } from "./db";
     let pointer = 0;
-    console.log(pointer)
     function turnLeft() {
         if (pointer > 0) {
             pointer = pointer - 2
         } else {
             pointer = spells.length - 2
         }
-        console.log(pointer)
     }
     function turnRight() {
         if (pointer < spells.length - 2) {
@@ -16,7 +14,6 @@
         } else {
             pointer = 0
         }
-        console.log(pointer)
     }
 </script>
 
@@ -53,8 +50,8 @@
     }
     #page {
         width: 98%;
-        border: 1px solid brown;
-        background-color: bisque;
+        border: 1px solid #7180B9;
+        background-color: #A8BACF;
         padding: 1em; 
         align-items: center;
         display: flex;

@@ -15,9 +15,9 @@
         align-items: center;
         width: 15%;
         height: 100%;
-        background-color: darkolivegreen;
+        background-color: #3423A6;
     }
     p {
-        color: aliceblue;
+        color: #DFF3E4;
     }
 </style>

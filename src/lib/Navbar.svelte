@@ -13,9 +13,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: grey;
+        background-color: #171738;
     }
     a {
-        padding: 1em;
+        padding: .65em;
+        margin: 3px;
+        border-radius: 6px;
+    }
+    a:focus{
+        background-color: #7B00FF;
     }
 </style>
