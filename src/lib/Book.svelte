@@ -17,23 +17,43 @@
     }
 </script>
 
-<div>
+<div id="content">
     <div id='page'> 
         <h2>{spells[pointer].name}</h2>
+        {#if spells[pointer].traits}
+            <div id="traits">
+                {#each spells[pointer].traits as trait}
+                    <p id='trait'>{trait}</p>
+                {/each}
+            </div>
+        {/if}
+        <div id='actions'>
+            <p style='margin-right: .5em;'>{spells[pointer].actions}</p>
+            <p>{spells[pointer].actionType}</p>
+        </div>
+        <div id='targets'> 
+            {#if spells[pointer].range}
+                <p>{spells[pointer].range}</p>
+            {/if}
+            {#if spells[pointer].targets}
+                <p>{spells[pointer].targets}</p>
+            {/if}
+            {#if spells[pointer].area}
+                <p>{spells[pointer].area}</p>
+            {/if}
+        </div>
         <!--
-        <p>{spells[pointer].actions}</p>
-        <p>{spells[pointer].actionType}</p>
-        <p>{spells[pointer].range}</p>
-        <p>{spells[pointer].targets}</p>
         -->
         <p>{spells[pointer].definition}</p>
         <button on:click={turnLeft}>left</button>
     </div>
     <div id='page'> 
         <h2>{spells[pointer + 1].name}</h2>
+        <div id='actions'>
+            <p style='margin-right: .5em;'>{spells[pointer + 1].actions}</p>
+            <p>{spells[pointer + 1].actionType}</p>
+        </div>
         <!--
-        <p>{spells[pointer + 1].actions}</p>
-        <p>{spells[pointer + 1].actionType}</p>
         <p>{spells[pointer + 1].range}</p>
         <p>{spells[pointer + 1].targets}</p>
         -->
@@ -43,7 +63,7 @@
 </div>
 
 <style>
-    div {
+    #content {
         display: flex;
         height: 100%;
         width: 85%;
@@ -56,5 +76,19 @@
         align-items: center;
         display: flex;
         flex-direction: column;
+    }
+    #actions{
+        display: flex;
+    }
+    #targets{
+        display: flex;
+    }
+    #trait{
+        border: 1px blue solid;
+        padding: .3em;
+        background-color:aqua;
+    }
+    #traits {
+        display:flex;
     }
 </style>
