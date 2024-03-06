@@ -1,13 +1,11 @@
 <script>
-
+    import { spells } from "./db";
 </script>
 
 <div>
-    <p>thing</p>
-    <p>thing</p>
-    <p>thing</p>
-    <p>thing</p>
-    <p>thing</p>
+    {#each spells as spell}
+        <p>{spell.name}</p>
+    {/each}
 </div>
 
 <style>
