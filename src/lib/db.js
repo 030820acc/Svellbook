@@ -46,7 +46,43 @@ export let spells = [
     savingThrow: "reflex",
     duration: undefined,
     definition: "A roaring blast of fire appears at a spot you designate, dealing 6d6 fire damage."
-    }
+    },
+    { name: "Shillelagh",
+    level: 1,
+    traits: ["plant", "transmutation"],
+    actions: 2,
+    actionType: "somatic, verbal",
+    range: "touch",
+    area: undefined,
+    targets: "1 club or staff you hold",
+    savingThrow: undefined,
+    duration: "1 minute",
+    definition: "The target grows vines and leaves, brimming with primal energy. The target becomes a +1 striking weapon while in your hands, gaining a +1 item bonus to attack rolls and increasing the number of weapon damage dice to two. Additionally, as long as you are on your home plane, attacks you make with the target against aberrations, extraplanar creatures, and undead increase the number of weapon damage dice to three."
+    },
+    { name: "Magic Missile",
+    level: 1,
+    traits: ["force", "evocation"],
+    actions: 1,
+    actionType: "somatic, verbal",
+    range: "120 feet",
+    area: undefined,
+    targets: "1 creature",
+    savingThrow: undefined,
+    duration: undefined,
+    definition: "You send a dart of force streaking toward a creature that you can see. It automatically hits and deals 1d4+1 force damage. For each additional action you use when Casting the Spell, increase the number of missiles you shoot by one, to a maximum of three missiles for 3 actions. You choose the target for each missile individually. If you shoot more than one missile at the same target, combine the damage before applying bonuses or penalties to damage, resistances, weaknesses, and so forth."
+    },
+    { name: "Shape Stone",
+    level: 4,
+    traits: ["earth", "transmutation"],
+    actions: 2,
+    actionType: "somatic, verbal",
+    range: "touch",
+    area: undefined,
+    targets: "cube of stone 10 feet across or smaller",
+    savingThrow: undefined,
+    duration: undefined,
+    definition: "You shape the stone into a rough shape of your choice. The shaping process is too crude to produce intricate parts, fine details, moving pieces, or the like. Any creatures standing atop the stone when you reshape it must each attempt a Reflex save or Acrobatics check."
+    },
 ]
 
 export let profile = {
