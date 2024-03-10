@@ -12,7 +12,6 @@
                 pointer = spells.length - 1
             }
         }
-        console.log(pointer, spells.length)
     }
     function turnRight() {
         if (pointer < spells.length - 2) {
@@ -20,51 +19,54 @@
         } else {
             pointer = 0
         }
-        console.log(pointer)
     }
-    //A8BACF
 </script>
 
 <div id="content">
     <div id='page'> 
-        <h2>{spells[pointer].name}</h2>
-        <div id='divider'></div>
-        {#if spells[pointer].traits}
-            <div id="traits">
-                {#each spells[pointer].traits as trait}
-                    <p id='trait'>{trait}</p>
-                {/each}
+        {#if spells[pointer] !== undefined}
+            <h2>{spells[pointer].name}</h2>
+            <div id='divider'></div>
+            {#if spells[pointer].traits !== undefined}
+                <div id="traits">
+                    {#each spells[pointer].traits as trait}
+                        <p id='trait'>{trait}</p>
+                    {/each}
+                </div>
+            {/if}
+            <div id='actions'>
+                <p id="label" style='margin-right: .25em;'>Cast:</p>
+                <p style='margin-right: .25em;'>{spells[pointer].actions}</p>
+                <p>{spells[pointer].actionType}</p>
             </div>
+            <div id='targets'> 
+                {#if spells[pointer].range !== undefined}
+                    <p id="label" style='margin-right: .25em;'>Range: </p>
+                    <p style='margin-right: .25em;'>{spells[pointer].range}</p>
+                {/if}   
+                {#if spells[pointer].targets  !== undefined}
+                    <p id="label" style='margin-right: .25em;'>Target: </p>
+                    <p style='margin-right: .25em;'>{spells[pointer].targets}</p>
+                {/if}
+                {#if spells[pointer].area  !== undefined}
+                    <p id="label" style='margin-right: .25em;'>Area: </p>
+                    <p style='margin-right: .25em;'>{spells[pointer].area}</p>
+                {/if}
+            </div>
+            <div id='divider'></div>
+            <p>{spells[pointer].definition}</p>
+            <p>page: {pointer + 1}</p>
+            <button on:click={turnLeft}>left</button>
+        {:else}
+            <p>page: {pointer + 1}</p>       
+            <button on:click={turnRight}>right</button>
         {/if}
-        <div id='actions'>
-            <p id="label" style='margin-right: .25em;'>Cast:</p>
-            <p style='margin-right: .25em;'>{spells[pointer].actions}</p>
-            <p>{spells[pointer].actionType}</p>
-        </div>
-        <div id='targets'> 
-            {#if spells[pointer].range}
-                <p id="label" style='margin-right: .25em;'>Range: </p>
-                <p style='margin-right: .25em;'>{spells[pointer].range}</p>
-            {/if}
-            {#if spells[pointer].targets}
-                <p id="label" style='margin-right: .25em;'>Target: </p>
-                <p style='margin-right: .25em;'>{spells[pointer].targets}</p>
-            {/if}
-            {#if spells[pointer].area}
-                <p id="label" style='margin-right: .25em;'>Area: </p>
-                <p style='margin-right: .25em;'>{spells[pointer].area}</p>
-            {/if}
-        </div>
-        <div id='divider'></div>
-        <p>{spells[pointer].definition}</p>
-        <p>page: {pointer + 1}</p>
-        <button on:click={turnLeft}>left</button>
     </div>
     <div id='page'> 
         {#if spells[pointer + 1] !== undefined}
         <h2>{spells[pointer + 1].name}</h2>
         <div id='divider'></div>
-        {#if spells[pointer + 1].traits}
+        {#if spells[pointer + 1].traits !== undefined}
             <div id="traits">
                 {#each spells[pointer + 1].traits as trait}
                     <p id='trait'>{trait}</p>
@@ -77,15 +79,15 @@
             <p>{spells[pointer + 1].actionType}</p>
         </div>
         <div id='targets'> 
-            {#if spells[pointer + 1].range}
+            {#if spells[pointer + 1].range !== undefined}
                 <p id="label" style='margin-right: .25em;'>Range: </p>
                 <p style='margin-right: .25em;'>{spells[pointer + 1].range}</p>
             {/if}
-            {#if spells[pointer + 1].targets}
+            {#if spells[pointer + 1].targets !== undefined}
                 <p id="label" style='margin-right: .25em;'>Target: </p>
                 <p style='margin-right: .25em;'>{spells[pointer + 1].targets}</p>
             {/if}
-            {#if spells[pointer + 1].area}
+            {#if spells[pointer + 1].area !== undefined}
                 <p id="label" style='margin-right: .25em;'>Area: </p>
                 <p style='margin-right: .25em;'>{spells[pointer + 1].area}</p>
             {/if}

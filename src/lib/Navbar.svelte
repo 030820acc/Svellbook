@@ -4,6 +4,7 @@
 
 <nav>
     <a href="/">🏠</a>
+    <a href="/new">+</a>
     <a href="/profile">⚙️</a>
 </nav>
 
