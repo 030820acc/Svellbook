@@ -1,7 +1,8 @@
 <script>
     import { spells } from "./db";
-    
     let pointer = 0;
+    let currentSpell = spells[pointer].name
+    
     function turnLeft() {
         if (pointer > 0) {
             pointer = pointer - 2
@@ -22,6 +23,16 @@
     }
 </script>
 
+<!--need to figure out the currentspell issue-->
+<div id='sidenav'>
+    {#each spells as spell}
+        {#if spell.name == currentSpell}
+            <p style='background-color: green'>{spell.name}</p>
+        {:else}
+            <p>{spell.name}</p>
+        {/if}
+    {/each}
+</div>
 <div id="content">
     <div id='page'> 
         {#if spells[pointer] !== undefined}
@@ -104,6 +115,14 @@
 </div>
 
 <style>
+    #sidenav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 15%;
+        height: 100%;
+        background-color: #3423A6;
+    }
     #label {
         font-weight: bold;
     }

@@ -2,12 +2,12 @@
     import Navbar from '$lib/Navbar.svelte';
     import SideNav from '$lib/SideNav.svelte';
     import Book from '../lib/Book.svelte'
+    let selectedSpell = 1;
 </script>
 
 <div id="wrapper">
     <Navbar />
     <div id="content">
-        <SideNav />
         <Book />
     </div>
 </div>

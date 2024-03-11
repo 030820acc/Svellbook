@@ -1,10 +1,15 @@
 <script>
     import { spells } from "./db";
+    export let chosen;
 </script>
 
 <div>
     {#each spells as spell}
-        <p>{spell.name}</p>
+        {#if spell.name == chosen}
+            <p style='background-color: green'>{spell.name}</p>
+        {:else}
+            <p>{spell.name}</p>
+        {/if}
     {/each}
 </div>
 
